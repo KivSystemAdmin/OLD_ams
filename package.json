@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "cd backend && npm run prisma:init_vercel"
+    "build1": "cd backend/dist && npm run prisma:init_vercel",
+    "build": "cd backend/dist && prisma generate && prisma migrate reset"
   },
   "keywords": [],
   "author": "",

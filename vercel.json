@@ -3,11 +3,10 @@
   "builds": [
     {
       "src": "backend/package.json",
-      "use": "@vercel/node"
-    },
-    {
-      "src": "backend/dist/src/app.js",
-      "use": "@vercel/node"
+      "use": "@vercel/node",
+      "config": {
+        "includeFiles": ["backend/dist/**/*"]
+      }
     },
     {
       "src": "frontend/package.json",

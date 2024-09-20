@@ -34,12 +34,12 @@
     "concurrently": "^9.0.1",
     "nodemon": "^3.1.0",
     "prettier": "^3.3.2",
-    "prisma": "^5.15.1",
+    "prisma": "^5.19.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "@prisma/client": "^5.15.1",
+    "@prisma/client": "^5.19.1",
     "@vercel/postgres": "^0.10.0",
     "bcrypt": "^5.1.1",
     "cookie-session": "^2.1.0",

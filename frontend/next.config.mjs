@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    // 全ての API routes にマッチ
     async headers() {
       return [
         {
@@ -22,5 +21,6 @@ const nextConfig = {
       ];
     },
   };
-   
-  module.exports = nextConfig;
+  
+  export default nextConfig;
+  

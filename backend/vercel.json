@@ -4,10 +4,6 @@
     {
       "src": "/api/(.*)",
       "dest": "backend/dist/src/app.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "frontend/$1"
     }
   ]
 }

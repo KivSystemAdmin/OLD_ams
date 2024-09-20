@@ -9,7 +9,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "node ./dist/src/app.js"
+      "dest": "ts-node .src/app.ts"
     }
   ]
 }

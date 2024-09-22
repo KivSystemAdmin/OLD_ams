@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "main": "app.js",
+  "main": "app.ts",
   "scripts": {
     "format": "npx prettier --write . && npx prisma format",
     "format-check": "npx prettier --check .",

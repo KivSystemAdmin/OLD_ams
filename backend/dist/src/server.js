@@ -18,17 +18,17 @@ const childrenRouter_1 = require("./routes/childrenRouter");
 const recurringClassesRouter_1 = require("./routes/recurringClassesRouter");
 const plansRouter_1 = require("./routes/plansRouter");
 const subscriptionsRouter_1 = require("./routes/subscriptionsRouter");
+const indexRouter_1 = require("./routes/indexRouter");
 exports.server = (0, express_1.default)();
 // List of allowed origins
 const allowedOrigins = [
-  "https://aaasobo-managament-system-frontend.vercel.app/",
-  "http://localhost:3000/",
+  "https://aaasobo-management-system-frontend.vercel.app",
+  "http://localhost:3000",
 ];
 // CORS Configuration
 exports.server.use(
   (0, cors_1.default)({
     origin: (origin, callback) => {
-      // Define res in the callback parameters
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
@@ -40,19 +40,14 @@ exports.server.use(
     allowedHeaders: ["Content-Type"],
   }),
 );
-// Fix the `server.options` handler
-exports.server.options("*", (req, res) => {
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
-  res.setHeader("Access-Control-Allow-Credentials", "true");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.sendStatus(200);
-});
 // Middleware
 exports.server.use(express_1.default.json());
 // Cookie-session setup
-const KEY1 = process.env.KEY1 || "";
-const KEY2 = process.env.KEY2 || "";
+const KEY1 = process.env.KEY1;
+const KEY2 = process.env.KEY2;
+if (!KEY1 || !KEY2) {
+  throw new Error("Session keys are missing.");
+}
 exports.server.use(
   (0, cookie_session_1.default)({
     name: "auth-session",
@@ -62,6 +57,7 @@ exports.server.use(
   }),
 );
 // Routes
+exports.server.use("/", indexRouter_1.indexRouter);
 exports.server.use("/instructors", instructorsRouter_1.instructorsRouter);
 exports.server.use("/classes", classesRouter_1.classesRouter);
 exports.server.use("/customers", customersRouter_1.customersRouter);

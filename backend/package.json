@@ -2,6 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "format": "npx prettier --write . && npx prisma format",
     "format-check": "npx prettier --check .",

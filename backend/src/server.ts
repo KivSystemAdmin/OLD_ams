@@ -16,7 +16,7 @@ export const server = express();
 
 // List of allowed origins
 const allowedOrigins = [
-  "https://aaasobo-management-system-frontend.vercel.app",
+  "https://aaasobo-managament-system-frontend.vercel.app",
   "http://localhost:3000",
 ];
 

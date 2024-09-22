@@ -51,6 +51,9 @@
     "express": "^4.19.2",
     "rrule": "^2.8.1"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "vercel": {
     "version": 2,
     "builds": [

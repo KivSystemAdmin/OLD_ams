@@ -12,3 +12,6 @@ const PORT = process.env.PORT;
 server_1.server.listen(PORT, () =>
   console.log(`Server is running on port ${PORT}`),
 );
+server_1.server.get("/", (req, res) => {
+  res.send("Hey this is my API running 🥳");
+});

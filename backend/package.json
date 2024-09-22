@@ -55,7 +55,7 @@
     "version": 2,
     "builds": [
       {
-        "src": "node dist/src/app.js",
+        "src": "./dist/src/app.js",
         "use": "@vercel/node"
       }
     ],

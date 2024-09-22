@@ -27,7 +27,7 @@ server.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        callback(new Error("CORS policy violation"));
+        callback(new Error("CORS policy violation!"));
       }
     },
     credentials: true,

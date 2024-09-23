@@ -58,12 +58,14 @@ if (process.env.NODE_ENV === "production") {
 
     if (sessionId) {
       const sessionData = await kv.get(sessionId);
+      console.log("Session Data:", sessionData);
       if (sessionData) {
         req.session = sessionData;
       } else {
         console.error("Error retrieving session:", Error);
         req.session = {};
       }
+      console.log("Session:", req.session);
     } else {
       const newSessionId = generateSessionId();
       res.cookie("session-id", newSessionId, {

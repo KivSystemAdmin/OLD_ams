@@ -6,6 +6,6 @@ export const indexRouter = express.Router();
 
 indexRouter.get("/", (_, res) => {
   res.json({
-    message: "AMS API!",
+    message: "AMS API",
   });
 });

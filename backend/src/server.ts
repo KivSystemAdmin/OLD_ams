@@ -68,6 +68,7 @@ if (process.env.NODE_ENV === "production") {
       console.log("Session:", req.session);
     } else {
       const newSessionId = generateSessionId();
+      console.log("New Session ID:", newSessionId);
       res.cookie("session-id", newSessionId, {
         httpOnly: true,
         secure: true,

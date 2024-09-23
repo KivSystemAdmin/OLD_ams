@@ -17,7 +17,7 @@ import { indexRouter } from "./routes/indexRouter";
 export const server = express();
 
 // Set up allowed origin
-const allowedOrigin = process.env.FRONTEND_ORIGIN;
+const allowedOrigin = process.env.FRONTEND_ORIGIN || "";
 
 // CORS Configuration
 server.use(
@@ -32,9 +32,16 @@ server.use(
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Access-Control-Allow-Origin"],
     preflightContinue: true,
   }),
 );
+
+server.use((_, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+  res.setHeader("Access-Control-Allow-Credentials", "true");
+  next();
+});
 
 // Middleware
 server.use(express.json());
